@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem 1.5rem;
+    font-family: "Fjalla One", sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("bg.svg");
+    z-index: -5;
+    opacity: 0.1;
+}
+
+.heading {
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: -3px;
+    animation: letter-spacing;
+    animation-delay: 1000ms;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.97, 0, 0.87, 1.54);
+}
+
+.span__div {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: text;
+    opacity: 0;
+    animation-delay: 1800ms;
+    transform-origin: left bottom;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.97, 0, 0.87, 1.54);
+}
+
+span:nth-of-type(1) {
+    animation-delay: 1900ms;
+}
+span:nth-of-type(2) {
+    animation-delay: 2000ms;
+}
+span:nth-of-type(4) {
+    animation-delay: 2100ms;
+}
+span:nth-of-type(5) {
+    animation-delay: 2200ms;
+}
+span:nth-of-type(6) {
+    animation-delay: 2300ms;
+}
+span:nth-of-type(7) {
+    animation-delay: 2400ms;
+}
+span:nth-of-type(8) {
+    animation-delay: 2500ms;
+}
+span:nth-of-type(9) {
+    animation-delay: 2600ms;
+}
+span:nth-of-type(11) {
+    animation-delay: 2700ms;
+}
+span:nth-of-type(12) {
+    animation-delay: 2800ms;
+}
+span:nth-of-type(13) {
+    animation-delay: 2900ms;
+}
+
+@keyframes text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes letter-spacing {
+    0% {
+        letter-spacing: -3px;
+    }
+    100% {
+        letter-spacing: 4px;
+    }
+}
+
+.image__container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image__container img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.loading {
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    opacity: 0.4;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.error__div {
+    width: 40%;
+    min-width: 20rem;
+    background-color: white;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    position: fixed;
+    left: 50%;
+    top: -10rem;
+    opacity: 0;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 800ms;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.error__div h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 3;
+}
+
+@media (min-width: 40rem) {
+    .heading {
+        font-size: 3rem;
+    }
+    .span__div {
+        font-size: 2rem;
+    }
+    .image__container {
+        width: 65%;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .image__container img {
+        border-radius: 15px;
+    }
+}
+
+@media (min-width: 60rem) {
+    .image__container {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+        column-gap: 3rem;
+    }
+    .image__container img {
+        border-radius: 15px;
+    }
+}
